@@ -1,4 +1,4 @@
-module github.com/theGOURL/Constructor
+module github.com/theGOURL/constructor
 
 go 1.20
 
