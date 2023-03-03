@@ -1,6 +1,6 @@
 #compdef $PROG
 
-_cli_zsh_autocomplete() {
+_constructor_zsh_autocomplete() {
   local -a opts
   local cur
   cur=${words[-1]}
@@ -17,4 +17,4 @@ _cli_zsh_autocomplete() {
   fi
 }
 
-compdef _cli_zsh_autocomplete $PROG
+compdef _constructor_zsh_autocomplete $PROG

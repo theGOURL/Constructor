@@ -8,7 +8,7 @@ import (
 )
 
 // Context is a type that is passed through to
-// each Handler action in a cli application. Context
+// each Handler action in a constructor application. Context
 // can be used to retrieve context-specific args and
 // parsed command-line options.
 type Context struct {

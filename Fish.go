@@ -25,7 +25,7 @@ type fishCompletionTemplate struct {
 }
 
 func (a *App) writeFishCompletionTemplate(w io.Writer) error {
-	const name = "cli"
+	const name = "constructor"
 	t, err := template.New(name).Parse(FishCompletionTemplate)
 	if err != nil {
 		return err

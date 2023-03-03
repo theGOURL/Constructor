@@ -1,6 +1,6 @@
 // Package constructor provides a minimal framework for creating and organizing command line
 // Go applications. constructor is designed to be easy to understand and write, the most simple
-// cli application can be written as follows:
+// constructor application can be written as follows:
 //
 //	func main() {
 //		(&constructor.App{}).Run(os.Args)

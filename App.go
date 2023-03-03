@@ -15,8 +15,8 @@ import (
 //ignoreFlagPrefix é  a constante que ignora sinalizadores de teste ao adicionar sinalizadores de outros pacotes
 const ignoreFlagPrefix = "test."
 
-//App é a struct Principal para cria uma aplicação CLI
-//App é a struct Principal para cria uma aplicação CLI
+//App é a struct Principal para cria uma aplicação constructor
+//App é a struct Principal para cria uma aplicação constructor
 type App struct {
 	//O nome do programa. O padrão é path.Base(os.Args[0])
 //O nome do programa. O padrão é path.Base(os.Args[0])
@@ -24,8 +24,8 @@ type App struct {
 	//O nome completo do comando de help.
 //O nome completo do comando de help.
 	HelpName string
-	//descriçãoDaCli
-//descriçãoDaCli
+	//descriçãoDaconstructor
+//descriçãoDaconstructor
 	Usage string
 	//Texto para substituir a seção USAGE de help
 //Texto para substituir a seção USAGE de help
@@ -41,8 +41,8 @@ type App struct {
 	Description string
 	//DefaultCommand é o nome (opcional) de um comando
 //DefaultCommand é o nome (opcional) de um comando
-	//para executar se nenhum nome de comando for passado como argumentos CLI.
-//para executar se nenhum nome de comando for passado como argumentos CLI.
+	//para executar se nenhum nome de comando for passado como argumentos constructor.
+//para executar se nenhum nome de comando for passado como argumentos constructor.
 	DefaultCommand string
 	//Lista de Comandos para executar
 //Lista de Comandos para executar
@@ -130,8 +130,8 @@ type App struct {
 	ExtraInfo func() map[string]string
 	// CustomAppHelpTemplate the text template for app help topic.
 // CustomAppHelPtemplate O modelo de texto para tópico de ajuda do aplicativo.
-	// cli.go uses text/template to render templates. You can
-// cli.go usa texto/modelo para renderizar modelos.Você pode
+	// constructor.go uses text/template to render templates. You can
+// constructor.go usa texto/modelo para renderizar modelos.Você pode
 	// render custom help text by setting this variable.
 // renderiza o texto de ajuda personalizado configurando essa variável.
 	CustomAppHelpTemplate string
@@ -200,7 +200,7 @@ func (a *App) Setup() {
 	}
 
 	if a.Usage == "" {
-		a.Usage = "A new cli application"
+		a.Usage = "A new constructor application"
 	}
 
 	if a.Version == "" {
@@ -342,8 +342,8 @@ func (a *App) useShortOptionHandling() bool {
 	return a.UseShortOptionHandling
 }
 
-//Run é o ponto de entrada para o aplicativo CLI.Analisa os argumentos fatia e rotasrotasrotas
-//Run é o ponto de entrada para o aplicativo CLI.Analisa os argumentos fatia e rotasrotasrotas
+//Run é o ponto de entrada para o aplicativo constructor.Analisa os argumentos fatia e rotasrotasrotas
+//Run é o ponto de entrada para o aplicativo constructor.Analisa os argumentos fatia e rotasrotasrotas
 //para a combinação de bandeira/args adequadadequadadequada
 //para a combinação de bandeira/args adequadadequadadequada
 func (a *App) Run(arguments []string) (err error) {
