@@ -1,4 +1,4 @@
-package cli
+package constructor
 
 // MutuallyExclusiveFlags defines a mutually exclusive flag group
 // Multiple option paths can be provided out of which

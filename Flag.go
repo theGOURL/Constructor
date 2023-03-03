@@ -96,7 +96,7 @@ type ActionableFlag interface {
 	RunAction(*Context) error
 }
 
-// Flag is a common interface related to parsing flags in cli.
+// Flag is a common interface related to parsing flags in constructor.
 // For more advanced flag parsing techniques, it is recommended that
 // this interface be implemented.
 type Flag interface {

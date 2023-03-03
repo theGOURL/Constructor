@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-// Command is a subcommand for a cli.App.
+// Command is a subcommand for a constructor.App.
 type Command struct {
 	// The name of the command
 	Name string
@@ -60,7 +60,7 @@ type Command struct {
 	commandNamePath []string
 
 	// CustomHelpTemplate the text template for the command help topic.
-	// cli.go uses text/template to render templates. You can
+	// constructor.go uses text/template to render templates. You can
 	// render custom help text by setting this variable.
 	CustomHelpTemplate string
 

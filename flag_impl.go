@@ -1,4 +1,4 @@
-package cli
+package constructor
 
 import (
 	"flag"
@@ -6,7 +6,7 @@ import (
 	"reflect"
 )
 
-// Value represents a value as used by cli.
+// Value represents a value as used by constructor.
 // For now it implements the golang flag.Value interface
 type Value interface {
 	flag.Value
@@ -74,7 +74,7 @@ type NoConfig struct{}
 
 // FlagBase[T,C,VC] is a generic flag base which can be used
 // as a boilerplate to implement the most common interfaces
-// used by urfave/cli.
+// used by urfave/constructor.
 //
 //	T specifies the type
 //	C specifies the configuration required(if any for that flag type)

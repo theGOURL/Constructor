@@ -1,4 +1,4 @@
-package cli
+package constructor
 
 var helpNameTemplate = `{{$v := offset .HelpName 6}}{{wrap .HelpName 3}}{{if .Usage}} - {{wrap .Usage $v}}{{end}}`
 var usageTemplate = `{{if .UsageText}}{{wrap .UsageText 3}}{{else}}{{.HelpName}}{{if .VisibleFlags}} [command options]{{end}} {{if .ArgsUsage}}{{.ArgsUsage}}{{else}}[arguments...]{{end}}{{end}}`
@@ -29,7 +29,7 @@ VERSION:
 var copyrightTemplate = `{{wrap .Copyright 3}}`
 
 // AppHelpTemplate is the text template for the Default help topic.
-// cli.go uses text/template to render templates. You can
+// constructor.go uses text/template to render templates. You can
 // render custom help text by setting this variable.
 var AppHelpTemplate = `NAME:
    {{template "helpNameTemplate" .}}
@@ -57,7 +57,7 @@ COPYRIGHT:
 `
 
 // CommandHelpTemplate is the text template for the command help topic.
-// cli.go uses text/template to render templates. You can
+// constructor.go uses text/template to render templates. You can
 // render custom help text by setting this variable.
 var CommandHelpTemplate = `NAME:
    {{template "helpNameTemplate" .}}
@@ -77,7 +77,7 @@ OPTIONS:{{template "visibleFlagTemplate" .}}{{end}}
 `
 
 // SubcommandHelpTemplate is the text template for the subcommand help topic.
-// cli.go uses text/template to render templates. You can
+// constructor.go uses text/template to render templates. You can
 // render custom help text by setting this variable.
 var SubcommandHelpTemplate = `NAME:
    {{template "helpNameTemplate" .}}

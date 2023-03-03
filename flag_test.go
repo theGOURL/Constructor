@@ -1,4 +1,4 @@
-package cli
+package constructor
 
 import (
 	"flag"
@@ -2542,7 +2542,7 @@ func (p *Parser) Get() interface{} {
 }
 
 func TestFlagFromFile(t *testing.T) {
-	temp, err := os.CreateTemp("", "urfave_cli_test")
+	temp, err := os.CreateTemp("", "urfave_constructor_test")
 	if err != nil {
 		t.Error(err)
 		return

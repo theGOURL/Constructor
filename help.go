@@ -161,7 +161,7 @@ func printCommandSuggestions(commands []*Command, writer io.Writer) {
 	}
 }
 
-func cliArgContains(flagName string) bool {
+func constructorArgContains(flagName string) bool {
 	for _, name := range strings.Split(flagName, ",") {
 		name = strings.TrimSpace(name)
 		count := utf8.RuneCountInString(name)
@@ -192,13 +192,13 @@ func printFlagSuggestions(lastArg string, flags []Flag, writer io.Writer) {
 			if count > 2 {
 				count = 2 // reuse this count to generate single - or -- in flag completion
 			}
-			// if flag name has more than one utf8 letter and last argument in cli has -- prefix then
+			// if flag name has more than one utf8 letter and last argument in constructor has -- prefix then
 			// skip flag completion for short flags example -v or -x
 			if strings.HasPrefix(lastArg, "--") && count == 1 {
 				continue
 			}
 			// match if last argument matches this flag and it is not repeated
-			if strings.HasPrefix(name, cur) && cur != name && !cliArgContains(name) {
+			if strings.HasPrefix(name, cur) && cur != name && !constructorArgContains(name) {
 				flagCompletion := fmt.Sprintf("%s%s", strings.Repeat("-", count), name)
 				_, _ = fmt.Fprintln(writer, flagCompletion)
 			}
@@ -368,8 +368,8 @@ func printHelpCustom(out io.Writer, templ string, data interface{}, customFuncs 
 	if err != nil {
 		// If the writer is closed, t.Execute will fail, and there's nothing
 		// we can do to recover.
-		if os.Getenv("CLI_TEMPLATE_ERROR_DEBUG") != "" {
-			_, _ = fmt.Fprintf(ErrWriter, "CLI TEMPLATE ERROR: %#v\n", err)
+		if os.Getenv("constructor_TEMPLATE_ERROR_DEBUG") != "" {
+			_, _ = fmt.Fprintf(ErrWriter, "constructor TEMPLATE ERROR: %#v\n", err)
 		}
 		return
 	}

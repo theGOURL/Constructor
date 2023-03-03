@@ -1,4 +1,4 @@
-package cli
+package constructor
 
 import (
 	"encoding/json"
